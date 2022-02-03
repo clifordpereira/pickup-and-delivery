@@ -12,13 +12,13 @@ class StoreModelTest extends TestCase
 {
     public function test_store_can_be_persisted()
     {
-        $user = Store::factory()->create();
+        $store = Store::factory()->create();
         // Use model in tests...
     }
 
     public function test_product_can_be_persisted()
     {
-        $user = Store::factory()
+        $store = Store::factory()
             ->hasProducts()
             ->create();
     }

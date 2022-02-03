@@ -20,9 +20,9 @@ class CreateOrdersTable extends Migration
             $table->decimal('selling_price', 8, 2);
             $table->smallInteger('ordered_qty');
             $table->datetime('ordered_on');
-            $table->foreignId('picked_by')->constrained('users');
-            $table->datetime('picked_on');
-            $table->datetime('delivered_on');
+            $table->foreignId('picked_by')->nullable()->constrained('users');
+            $table->datetime('picked_on')->nullable();
+            $table->datetime('delivered_on')->nullable();
             $table->string('order_status');
             $table->timestamps();
         });
