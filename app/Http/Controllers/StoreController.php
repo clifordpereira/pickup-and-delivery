@@ -14,7 +14,9 @@ class StoreController extends Controller
      */
     public function index()
     {
-        //
+        $stores = Store::all();
+
+        return view('stores.index')->with('stores', $stores);
     }
 
     /**
@@ -24,7 +26,7 @@ class StoreController extends Controller
      */
     public function create()
     {
-        //
+        return view('sharks.create');
     }
 
     /**
@@ -35,7 +37,7 @@ class StoreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $store = Store::create($request->all());
     }
 
     /**
@@ -46,7 +48,11 @@ class StoreController extends Controller
      */
     public function show(Store $store)
     {
-        //
+        // get the shark
+        $store = Store::find($id);
+
+        // show the view and pass the shark to it
+        return view('stores.show')->with('store', $store);
     }
 
     /**
